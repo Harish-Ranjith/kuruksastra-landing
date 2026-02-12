@@ -1,4 +1,3 @@
-
 import React from "react";
 import Sponsors from "./Sponsors";
 import Image from "next/image";
@@ -7,112 +6,114 @@ import { alfa, albert } from "@/app/layout";
 const Footer = () => {
   return (
     <div className="flex flex-col overflow-x-hidden">
-      
+
       <Sponsors />
 
-      <div className="Footer relative flex h-[500px] w-full">
+      <div id="contact" className="Footer relative flex flex-col w-full min-h-[500px] px-6 sm:px-10 md:px-16 lg:px-20 pt-10 md:pt-14 pb-6 md:pb-8">
 
         {/* Contact Us Title */}
         <p
           className={`${alfa.className} 
-          absolute top-[60px] left-1/2 -translate-x-1/2
-          text-[78px] leading-none whitespace-nowrap
-          bg-gradient-to-r from-[#B3902C] via-[#F8F08B] to-[#D7B44E]
-          bg-clip-text text-transparent`}
+          text-center
+          text-[36px] sm:text-[48px] md:text-[60px] lg:text-[78px] leading-none
+          mb-8 md:mb-12 static-gold`}
         >
           Contact us
         </p>
 
-        {/* Core Committee */}
-        <div className="absolute top-[160px] left-[80px] px-6 py-4 w-[650px]">
-          
-          <p
-            className={`${albert.className} text-[32px] 
-            bg-clip-text text-transparent 
-            bg-gradient-to-r from-[#B3902C] via-[#F8F08B] to-[#D7B44E]`}
-          >
-            Core Committee
-          </p>
+        {/* Content Row - stacks on mobile and tablet */}
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10 md:gap-14">
 
-          <div className="grid grid-cols-3 gap-y-6 gap-x-10 mt-3 text-white text-[20px]">
-            <div>
-              <p>Amirthavarshini R</p>
-              <p className="text-[18px] opacity-90">+91 99529 64049</p>
+          {/* Core Committee */}
+          <div className="w-full lg:w-auto flex flex-col items-center lg:items-start">
+            <p
+              className={`${albert.className} text-[24px] sm:text-[28px] md:text-[32px] 
+              bg-clip-text text-transparent 
+              bg-gradient-to-r from-[#B3902C] via-[#F8F08B] to-[#D7B44E]
+              text-center lg:text-left`}
+            >
+              Core Committee
+            </p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-5 gap-x-8 mt-4 text-white text-[16px] sm:text-[18px] md:text-[20px] justify-items-center lg:justify-items-start text-center lg:text-left">
+              <div className="committee-item">
+                <p>Amirthavarshini R</p>
+                <p className="text-[14px] sm:text-[16px] md:text-[18px] opacity-90">+91 99529 64049</p>
+              </div>
+
+              <div className="committee-item">
+                <p>Mukilan V M</p>
+                <p className="text-[14px] sm:text-[16px] md:text-[18px] opacity-90">+91 93844 37698</p>
+              </div>
+
+              <div className="committee-item">
+                <p>Shanjay S</p>
+                <p className="text-[14px] sm:text-[16px] md:text-[18px] opacity-90">+91 96009 23014</p>
+              </div>
+
+              <div className="committee-item">
+                <p>Amurtha K R</p>
+                <p className="text-[14px] sm:text-[16px] md:text-[18px] opacity-90">+91 93619 71610</p>
+              </div>
+
+              <div className="committee-item">
+                <p>Rajeshwar P</p>
+                <p className="text-[14px] sm:text-[16px] md:text-[18px] opacity-90">+91 80724 37287</p>
+              </div>
             </div>
+          </div>
 
-            <div>
-              <p>Mukilan V M</p>
-              <p className="text-[18px] opacity-90">+91 93844 37698</p>
-            </div>
+          {/* Follow Us */}
+          <div className={`${albert.className} w-full lg:w-auto flex flex-col items-center lg:items-start`}>
+            <p
+              className="text-[22px] sm:text-[26px] md:text-[28px] 
+              bg-clip-text text-transparent 
+              bg-gradient-to-r from-[#B3902C] via-[#F8F08B] to-[#D7B44E]
+              text-center lg:text-left"
+            >
+              Follow us
+            </p>
 
-            <div>
-              <p>Shanjay S</p>
-              <p className="text-[18px] opacity-90">+91 96009 23014</p>
-            </div>
+            <div className="grid grid-cols-5 gap-4 sm:gap-6 mt-4 justify-items-center">
+              <a href="https://www.instagram.com/kuruksastra?igsh=c3VrYWEwdXgydTNj" target="_blank" className="social-link transition-transform duration-200 hover:scale-115">
+                <Image src="/foo/insta.png" alt="Instagram" width={40} height={40} className="sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px] rounded-lg" />
+              </a>
 
-            <div>
-              <p>Amurtha K R</p>
-              <p className="text-[18px] opacity-90">+91 93619 71610</p>
-            </div>
+              <a href="https://www.facebook.com/kssastra/" target="_blank" className="social-link transition-transform duration-200 hover:scale-115">
+                <Image src="/foo/fb.png" alt="Facebook" width={40} height={40} className="sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px] rounded-lg" />
+              </a>
 
-            <div>
-              <p>Rajeshwar P</p>
-              <p className="text-[18px] opacity-90">+91 80724 37287</p>
+              <a href="https://youtube.com/@sastrafotohub?si=MIuC5i2-YCzNgqCC" target="_blank" className="social-link transition-transform duration-200 hover:scale-115">
+                <Image src="/foo/youtube.png" alt="YouTube" width={40} height={40} className="sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px] rounded-lg" />
+              </a>
+
+              <a href="https://www.linkedin.com/company/kuruksastra/" target="_blank" className="social-link transition-transform duration-200 hover:scale-115">
+                <Image src="/foo/linkedin.png" alt="LinkedIn" width={40} height={40} className="sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px] rounded-lg" />
+              </a>
+
+              <a href="https://x.com/kssastra?t=m_rRvKLpVIyeU_rN9FSBiA&s=09" target="_blank" className="social-link transition-transform duration-200 hover:scale-115">
+                <Image src="/foo/tweet.png" alt="Twitter" width={40} height={40} className="sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px] rounded-lg" />
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Follow Us */}
-        <div className={`absolute top-[190px] right-[120px] text-left ${albert.className}`}>
-
-          <p
-            className="text-[28px] 
-            bg-clip-text text-transparent 
-            bg-gradient-to-r from-[#B3902C] via-[#F8F08B] to-[#D7B44E]"
-          >
-            Follow us
-          </p>
-
-          <div className="grid grid-cols-3 gap-4 mt-4 justify-items-center">
-            <a href="https://www.instagram.com/kuruksastra?igsh=c3VrYWEwdXgydTNj" target="_blank">
-              <Image src="/foo/insta.png" alt="Instagram" width={50} height={50}/>
-            </a>
-
-            <a href="https://www.facebook.com/kssastra/" target="_blank">
-              <Image src="/foo/fb.png" alt="Facebook" width={50} height={50}/>
-            </a>
-
-            <a href="https://youtube.com/@sastrafotohub?si=MIuC5i2-YCzNgqCC" target="_blank">
-              <Image src="/foo/youtube.png" alt="YouTube" width={50} height={50}/>
-            </a>
-
-            <a href="https://www.linkedin.com/company/kuruksastra/" target="_blank">
-              <Image src="/foo/linkedin.png" alt="LinkedIn" width={50} height={50}/>
-            </a>
-
-            <a href="https://x.com/kssastra?t=m_rRvKLpVIyeU_rN9FSBiA&s=09" target="_blank">
-              <Image src="/foo/tweet.png" alt="Twitter" width={50} height={50}/>
-            </a>
-          </div>
-        </div>
-
-        
+        {/* Divider */}
         <Image
           src="/foo/Vector 2.png"
           alt="divider"
           width={1500}
           height={10}
-          className="object-contain absolute bottom-[80px] left-0"
+          className="object-contain w-full mt-6 md:mt-8"
         />
 
+        {/* Credits */}
+        <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-2 px-0 sm:px-4 mt-2 text-white text-[12px] sm:text-[14px] font-['Poppins']">
+          <p>@2026 kuruksastra</p>
+          <p>Made with 🤍 by 300DPI & ACE</p>
+        </div>
+
       </div>
-      <div className="absolute bottom-[-320] left-0 w-full flex justify-between px-20 text-white text-[20  px]">
-  
-  <p>@2026 kuruksastra</p>
-
-  <p>Made with 🤍 by 300DPI & ACE</p>
-
-</div>
 
     </div>
   );

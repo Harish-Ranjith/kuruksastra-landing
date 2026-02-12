@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -25,27 +29,93 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.Sponsor{
-  /* background-color: #F5E983; */
-  display: flex;
-  height: 602px;
-  width:100vw;
-  top:0;
-  position: relative;
-  background: 
-radial-gradient(56.07% 472.84% at 46.86% 49.06%, #B3902C 0%, #E7C65B 50%, #F8F08B 75%, #D7B44E 100%) ;
+::selection {
+  background-color: #d4af37;
+  color: #0e5035;
+}
 
+::-moz-selection {
+  background-color: #d4af37;
+  color: #0e5035;
+}
+
+.Sponsor {
+  display: flex;
+  min-height: auto;
+  width: 100%;
+  position: relative;
+  background:
+    radial-gradient(56.07% 472.84% at 46.86% 49.06%, #B3902C 0%, #E7C65B 50%, #F8F08B 75%, #D7B44E 100%);
 }
 
 
-.Footer{
+.Footer {
   display: flex;
-  height: 80vh;
-  width: 100vw;
+  min-height: 400px;
+  width: 100%;
   justify-content: center;
-/* background: linear-gradient(138.64deg, #533A1C 12.77%, #664A28 30.76%, #6F522E 39.76%, #785A34 48.75%, #2B1B0C 84.74%), */
-background: 
-linear-gradient(132.26deg, #022F12 13.03%, #075233 30.92%, #022F12 59.86%, #186B3D 91.3%);
+  background: #074d32;
+}
 
-;
+.Footer::selection,
+.Footer *::selection {
+  background-color: #F1E987;
+  color: #022F12;
+}
+
+.Footer::-moz-selection,
+.Footer *::-moz-selection {
+  background-color: #F1E987;
+  color: #022F12;
+}
+
+/* Global Shimmer Utility */
+.shimmer-text {
+  background: linear-gradient(110deg,
+      currentColor 0%,
+      currentColor 40%,
+      #ffffff 50%,
+      currentColor 60%,
+      currentColor 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: global-shimmer 6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes global-shimmer {
+  0% {
+    background-position: 150% center;
+  }
+
+  100% {
+    background-position: -150% center;
+  }
+}
+
+/* Clock-matched Gold Shimmer */
+.shimmer-gold {
+  background: linear-gradient(110deg,
+      #DFD34A 0%,
+      #F1E987 35%,
+      #ffffff 50%,
+      #F1E987 65%,
+      #DFD34A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: global-shimmer 6s linear infinite;
+  display: inline-block;
+}
+
+/* Static Gold Gradient (matched with clock) */
+.static-gold {
+  background: linear-gradient(to bottom, #F1E987, #DFD34A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
 }

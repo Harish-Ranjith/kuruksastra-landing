@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 export const alfa = Alfa_Slab_One({
   weight: "400",
   subsets: ["latin"],
+  variable: "--font-alfa-slab",
 });
 
 export const albert = Albert_Sans({
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${alfa.variable} antialiased`}
       >
         {children}
       </body>

@@ -12,7 +12,7 @@ export default function Home() {
         <HexReveal
           onComplete={() => setLoadingComplete(true)}
           logoSrc="/logo.png"
-          logoAlt="Kuruksatna Logo"
+          logoAlt="Kuruksastra Logo"
         />
       )}
       <HeroSection isVisible={loadingComplete} />

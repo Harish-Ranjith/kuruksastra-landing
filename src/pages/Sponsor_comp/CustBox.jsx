@@ -4,7 +4,7 @@ export default function CustBox({ wid, hei, src }) {
   return (
     <div
       className="border-2 border-[#756C1A] flex items-center justify-center overflow-hidden"
-      style={{ width: wid, height: hei }}
+      style={{ width: `min(${wid}px, 100%)`, height: hei, maxWidth: '100%' }}
     >
       <Image
         src={src}
