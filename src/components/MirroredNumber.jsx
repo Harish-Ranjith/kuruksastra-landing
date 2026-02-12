@@ -55,7 +55,7 @@ export default function RollingNumber({
                 </span>
 
                 {/* Center number */}
-                <span className={styles.currentNumber} style={{ zIndex: 5 }}>
+                <span className={styles.currentNumber} style={{ zIndex: 5 }} data-value={format(displayValue)}>
                     {format(displayValue)}
                 </span>
 

@@ -6,7 +6,7 @@ import CurvedLinesBackground from './CurvedLinesBackground';
 
 const DescriptionPanel = forwardRef(function DescriptionPanel(props, ref) {
   return (
-    <section ref={ref} className={styles.descriptionPanel}>
+    <section ref={ref} id="about" className={styles.descriptionPanel}>
       {/* Same curved lines background as hero */}
       <div className={styles.descriptionBackground}>
         <CurvedLinesBackground />

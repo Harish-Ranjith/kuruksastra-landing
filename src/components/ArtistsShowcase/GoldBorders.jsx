@@ -1,14 +1,15 @@
 'use client';
 
+import { forwardRef } from 'react';
 import styles from './ArtistsShowcase.module.css';
 
 /**
  * Gold border decorations on left and right edges
  * Full screen height vertical gold stripes
  */
-export default function GoldBorders() {
+const GoldBorders = forwardRef(function GoldBorders(props, ref) {
   return (
-    <>
+    <div ref={ref} className={styles.goldBordersWrapper}>
       {/* Left border - vertical gold lines */}
       <div className={styles.goldBorderLeft}>
         <div className={styles.verticalLines}>
@@ -26,6 +27,8 @@ export default function GoldBorders() {
           <span className={styles.thickLine} />
         </div>
       </div>
-    </>
+    </div>
   );
-}
+});
+
+export default GoldBorders;

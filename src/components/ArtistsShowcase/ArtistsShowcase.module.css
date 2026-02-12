@@ -72,6 +72,17 @@ html::-webkit-scrollbar {
   pointer-events: none;
 }
 
+/* ==================== Gold Borders Wrapper ==================== */
+.goldBordersWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
 /* ==================== Gold Borders - Full Height, Wider ==================== */
 .goldBorderLeft,
 .goldBorderRight {
@@ -222,11 +233,11 @@ html::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 10rem;
+  padding: 10rem 10rem;
   overflow: hidden;
   /* Pull section up to overlap with pinned section */
   margin-top: -100px;
-  padding-top: calc(5rem + 100px);
+  padding-top: calc(10rem + 100px);
   border: none;
   outline: none;
 }
@@ -259,24 +270,13 @@ html::-webkit-scrollbar {
   font-weight: 400;
 }
 
+
+
 .descParagraph:last-child {
   margin-bottom: 0;
 }
 
-/* Custom text selection colors */
-.descriptionPanel::selection,
-.descriptionContent::selection,
-.descParagraph::selection {
-  background-color: #d4c67a;
-  color: #0e5035;
-}
 
-.descriptionPanel::-moz-selection,
-.descriptionContent::-moz-selection,
-.descParagraph::-moz-selection {
-  background-color: #d4c67a;
-  color: #0e5035;
-}
 
 /* ==================== Reduced Motion ==================== */
 @media (prefers-reduced-motion: reduce) {
@@ -358,7 +358,7 @@ html::-webkit-scrollbar {
   }
 
   .descriptionPanel {
-    padding: 4rem 6rem;
+    padding: 8rem 6rem;
   }
 
   .cardsContainer {
@@ -398,7 +398,7 @@ html::-webkit-scrollbar {
   }
 
   .descriptionPanel {
-    padding: 3rem 4rem;
+    padding: 6rem 4rem;
   }
 
   .descParagraph {
@@ -447,7 +447,7 @@ html::-webkit-scrollbar {
   }
 
   .descriptionPanel {
-    padding: 2rem 1.5rem;
+    padding: 4rem 1.5rem;
   }
 
   .descParagraph {

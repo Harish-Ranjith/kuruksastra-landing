@@ -65,6 +65,8 @@ export default function ArtistsShowcase({
   const sectionRef = useRef(null);
   const cardsRef = useRef(null);
   const titleRef = useRef(null);
+  const goldBordersRef = useRef(null);
+  const descriptionRef = useRef(null);
   const [viewportWidth, setViewportWidth] = useState(1200); // Default to desktop
 
   // Track viewport width
@@ -114,9 +116,9 @@ export default function ArtistsShowcase({
         trigger: sectionRef.current,
         start: 'top top',
         end: '+=200%',
-        scrub: 4,
-        pin: true,
-        anticipatePin: 1,
+        scrub: 1.5, // Reduced for better responsiveness
+        pin: sectionRef.current, // Explicit pinning
+        fastScrollEnd: true, // Prevents jumps on fast scrolls
         onLeave: () => onAnimationComplete?.(),
       },
     });
@@ -139,7 +141,33 @@ export default function ArtistsShowcase({
         rotation: pos.rotation,
         ease: 'power2.out',
         duration: 1.5,
+        overwrite: 'auto', // Prevent conflicts during fast scroll
       }, 0.15);
+    });
+
+    // Phase 3: Blur title after cards are spread
+    tl.to(titleRef.current, {
+      filter: 'blur(8px)',
+      opacity: 0.3,
+      duration: 1,
+      ease: 'power2.inOut',
+      overwrite: 'auto', // Prevent conflicts during fast scroll
+      immediateRender: false, // Ensure it starts only when reached
+    }, 1.2); // Start blurring slightly before the spread fully finishes for a smoother transition
+
+    // Phase 4: About Section Text Entrance
+    const paragraphs = sectionRef.current.querySelectorAll(`.${styles.descParagraph}`);
+    gsap.from(paragraphs, {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: paragraphs[0],
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+      }
     });
 
     // Handle resize - kill and recreate
@@ -155,10 +183,29 @@ export default function ArtistsShowcase({
     };
   }, [viewportWidth, onAnimationComplete]); // Re-run when viewport changes
 
+  // Fade out gold borders when scrolling into the description section
+  useEffect(() => {
+    if (!goldBordersRef.current || !descriptionRef.current) return;
+
+    const st = ScrollTrigger.create({
+      trigger: descriptionRef.current,
+      start: 'top 80%',
+      end: 'top 20%',
+      scrub: true,
+      onUpdate: (self) => {
+        if (goldBordersRef.current) {
+          goldBordersRef.current.style.opacity = 1 - self.progress;
+        }
+      },
+    });
+
+    return () => st.kill();
+  }, []);
+
   return (
-    <div ref={containerRef} className={styles.showcase}>
+    <div id="artists" ref={containerRef} className={styles.showcase}>
       {/* Fixed Gold Borders */}
-      <GoldBorders />
+      <GoldBorders ref={goldBordersRef} />
 
       {/* Hero Section with scroll-triggered animation */}
       <section
@@ -201,7 +248,7 @@ export default function ArtistsShowcase({
       </section>
 
       {/* Description Section */}
-      <DescriptionPanel />
+      <DescriptionPanel ref={descriptionRef} />
     </div>
   );
 }

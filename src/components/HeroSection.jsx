@@ -55,6 +55,15 @@ export default function HeroSection({ isVisible }) {
           "-=0.3"
         );
 
+      // Subtle float for logo (continuous)
+      gsap.to(`.${styles.logo}`, {
+        y: -5,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+
     }, heroRef);
 
     return () => ctx.revert();
@@ -126,11 +135,11 @@ export default function HeroSection({ isVisible }) {
 
       {/* Navigation */}
       <nav className={`hero-nav ${styles.nav}`}>
-        <a href="#about" className={styles.navLink}>About</a>
-        <a href="#sponsorship" className={styles.navLink}>Sponsorship</a>
-        <span className={styles.logo}>Kuruksastra</span>
-        <a href="#events" className={styles.navLink}>Events</a>
-        <a href="#contact" className={styles.navLink}>Contact</a>
+        <a href="#about" className={styles.navLink} onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>About</a>
+        <a href="#sponsorship" className={styles.navLink} onClick={(e) => { e.preventDefault(); document.getElementById('sponsorship')?.scrollIntoView({ behavior: 'smooth' }); }}>Sponsorship</a>
+        <img src="/ks_logo.png" alt="Kuruksastra" className={styles.logo} />
+        <a href="#artists" className={styles.navLink} onClick={(e) => { e.preventDefault(); document.getElementById('artists')?.scrollIntoView({ behavior: 'smooth' }); }}>Artists</a>
+        <a href="#contact" className={styles.navLink} onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</a>
       </nav>
 
       {/* Countdown Display - Rolling Numbers */}
