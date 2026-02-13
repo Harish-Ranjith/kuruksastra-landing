@@ -27,7 +27,7 @@ const Sponsors = () => {
   ];
 
   return (
-    <div className="Sponsor w-full flex justify-center overflow-hidden">
+    <div id="sponsorship" className="Sponsor w-full flex justify-center overflow-hidden">
 
       {/* CONTENT WRAPPER */}
       <div className="relative w-[100vw] min-h-[720px]">

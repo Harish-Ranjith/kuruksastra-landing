@@ -5,7 +5,7 @@ import { alfa, albert } from "@/app/layout";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col overflow-x-hidden">
+    <div className="flex flex-col overflow-x-hidden relative z-[101]">
 
       <Sponsors />
 
@@ -36,7 +36,7 @@ const Footer = () => {
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-5 gap-x-8 mt-4 text-white text-[16px] sm:text-[18px] md:text-[20px] justify-items-center lg:justify-items-start text-center lg:text-left">
-              
+
               <div className="committee-item">
                 <p className={`${albert.className} text-[20px] sm:text-[20px] md:text-[25px] 
               bg-clip-text text-transparent 
