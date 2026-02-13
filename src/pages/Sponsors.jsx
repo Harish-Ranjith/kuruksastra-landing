@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 import CustBox from "./Sponsor_comp/CustBox";
@@ -18,11 +19,11 @@ const Sponsors = () => {
     "/sponsors/Mask group.png",
     "/sponsors/LA Sizzlers.png",
     "/sponsors/Magoosh.png",
-    "/sponsors/MRP Vapo Cure Paints.png",
+    "/sponsors/mrf_sponsor.png",
     "/sponsors/pepsi.png",
-    "/sponsors/Roshan Bag.png",
+    "/sponsors/roshan-removebg-preview.png",
     "/sponsors/TVS Motor Company.png",
-    "/sponsors/Urban Pots.png",
+    "/sponsors/urban_pots-removebg-preview.png",
     "/sponsors/Veranda.png",
   ];
 
@@ -37,7 +38,7 @@ const Sponsors = () => {
           <CustBox wid={310} hei={162} src={sponsList[3]} />
           <CustBox wid={310} hei={162} src={sponsList[1]} />
 
-          <div className="w-[310px] h-[161px] flex items-center justify-center ">
+          {/* <div className="w-[310px] h-[161px] flex items-center justify-center ">
             <Image
               src={sponsList[10]}
               alt="KS Logo"
@@ -45,10 +46,10 @@ const Sponsors = () => {
               height={90}
               className="object-contain"
             />
-          </div>
+          </div> */}
 
-          <CustBox wid={310} hei={162} src={sponsList[18]} />
           <CustBox wid={310} hei={162} src={sponsList[14]} />
+          <CustBox wid={310} hei={162} src={sponsList[8]} />
         </div>
 
         {/* Title */}
@@ -65,8 +66,8 @@ const Sponsors = () => {
         {/* Middle Row */}
         <div className="flex bottom-[7] absolute w-full left-1/2 
         -translate-x-1/2 -translate-y-6/5  
-        sm:bottom-[6px] md:bottom-[-95px] lg:bottom-[-95px]">
-          <CustBox wid={310} hei={162} src={sponsList[8]} />
+        sm:bottom-[6px] md:bottom-[-95px] lg:bottom-[-95px] border-t-2 border-[#756C1A]">
+          <CustBox wid={310} hei={162} src={sponsList[18]} />
           <CustBox wid={310} hei={162} src={sponsList[0]} />
           <CustBox wid={310} hei={162} src={sponsList[12]} />
           <CustBox wid={310} hei={162} src={sponsList[16]} />
@@ -76,24 +77,47 @@ const Sponsors = () => {
         {/* Bottom Sponsors */}
         <div
           className="
-            absolute bottom-[1px] w-full
-            grid
-            grid-cols-5
+            absolute bottom-[0px] w-full
+            hidden
+            md:grid
             md:grid-cols-9 
-            justify-items-center
+            md:justify-items-center
+            md:justify-center
+            translate-y-[-3px]
+            border-t-1 border-[#756C1A]
           "
         >
           <CustBox wid={200} hei={100} src={sponsList[2]} />
           <CustBox wid={170} hei={100} src={sponsList[17]} />
           <CustBox wid={170} hei={100} src={sponsList[5]} />
-          <CustBox wid={170} hei={100} src={sponsList[4]} />
-          <CustBox wid={180} hei={100} src={sponsList[15]} />
-          <CustBox wid={170} hei={100} src={sponsList[7]} />
-          <CustBox wid={170} hei={100} src={sponsList[11]} />
           <CustBox wid={170} hei={100} src={sponsList[13]} />
-          <CustBox wid={200} hei={100} src={sponsList[9]} />
+          <CustBox wid={180} hei={100} src={sponsList[15]} />
+          <CustBox wid={170} hei={100} src={sponsList[9]} />
+          <CustBox wid={170} hei={100} src={sponsList[11]} />
+          <CustBox wid={170} hei={100} src={sponsList[4]} />
+          <CustBox wid={200} hei={100} src={sponsList[7]} />
         </div>
+        {/* Bottom Sponsors - Mobile */}
+        <div
+          className="
+    absolute bottom-[0px] w-full
+    flex flex-wrap justify-center
+    md:hidden
+    translate-y-[-3px]
+    border-t-2 border-[#756C1A]
+  "
+        >
+          <div className="w-1/5"><CustBox wid={200} hei={100} src={sponsList[2]} /></div>
+          <div className="w-1/5"><CustBox wid={170} hei={100} src={sponsList[17]} /></div>
+          <div className="w-1/5"><CustBox wid={170} hei={100} src={sponsList[5]} /></div>
+          <div className="w-1/5"><CustBox wid={170} hei={100} src={sponsList[13]} /></div>
+          <div className="w-1/5"><CustBox wid={180} hei={100} src={sponsList[15]} /></div>
 
+          <div className="w-1/5 border-l-2 border-[#756C1A]"><CustBox wid={170} hei={100} src={sponsList[9]} /></div>
+          <div className="w-1/5"><CustBox wid={170} hei={100} src={sponsList[11]} /></div>
+          <div className="w-1/5"><CustBox wid={170} hei={100} src={sponsList[4]} /></div>
+          <div className="w-1/5"><CustBox wid={200} hei={100} src={sponsList[7]} /></div>
+        </div>
       </div>
     </div>
   );
