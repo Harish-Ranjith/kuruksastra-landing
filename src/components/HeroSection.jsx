@@ -71,7 +71,7 @@ export default function HeroSection({ isVisible }) {
 
   // Real countdown logic
   useEffect(() => {
-    const targetDate = new Date('2026-03-30T00:00:00').getTime();
+    const targetDate = new Date('2026-04-03T00:00:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
